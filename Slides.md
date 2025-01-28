@@ -7,7 +7,8 @@ bg: white
 
 ### in a nutshell
 
-![[venn.svg|300]]
+![diagram|300](https://raw.githubusercontent.com/PabRod/graphic-cv/251e5f0e76ca7c5f48df6ab7b9282d1397310cf6/_img/venn.svg)
+
 Want to know more? Browse to the right ➡️
 
 ---
@@ -41,7 +42,7 @@ More details? Browse down ⬇️
 
 ---
 <!-- slide bg="#33b8ff" -->
-<!-- slide bg="[[gafasIOT.jpg]]" data-background-opacity="0.2"-->
+<!-- slide bg="https://github.com/PabRod/graphic-cv/blob/main/_img/gafasIOT.jpg?raw=true" data-background-opacity="0.2"-->
 ## Engineer
 **Industrial experience** as a _R&D engineer_ for the **optics sector**.
 
@@ -53,7 +54,7 @@ More details? Browse down ⬇️
 
 --
 <!-- slide bg="#33b8ff" -->
-<!-- slide bg="[[gafasIOT.jpg]]" data-background-opacity="0.2"-->
+<!-- slide bg="https://github.com/PabRod/graphic-cv/blob/main/_img/gafasIOT.jpg?raw=true" data-background-opacity="0.2"-->
 ### Highlights
 - Proficient in **collaborative**, high-quality coding
 - Experience **leading** projects
@@ -66,7 +67,7 @@ More details? Browse down ⬇️
 
 
 <!-- slide bg="#922b21" -->
-<!-- slide bg="[[euskalduna.jpeg]]" data-background-opacity="0.2"-->
+<!-- slide bg="https://github.com/PabRod/graphic-cv/blob/main/_img/euskalduna.jpeg?raw=true" data-background-opacity="0.2"-->
 ## Communicator
 
 Side job in **science communication**. Experience in **public speaking** in theaters and radio. Author of >100 short pieces, some of them featured in international **newspapers**.
@@ -77,7 +78,7 @@ More details? Browse down ⬇️
 
 --
 <!-- slide bg="#922b21" -->
-<!-- slide bg="[[euskalduna.jpeg]]" data-background-opacity="0.2"-->
+<!-- slide bg="https://github.com/PabRod/graphic-cv/blob/main/_img/euskalduna.jpeg?raw=true" data-background-opacity="0.2"-->
 ### Highlights
 -  Working proficiency in 4 languages: 🇪🇸 🇬🇧 🇳🇱 🇵🇹
 - Some pieces for international newspapers, such as _El País_
