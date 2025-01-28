@@ -8,7 +8,7 @@ create-gh-pages:
     git checkout --orphan $(PAGES_BRANCH)
     git rm -rf .
     git commit --allow-empty -m "Initial commit of gh-pages"
-    git push origin $(PAGES_BRANCH)
+    git push --set-upstream origin gh-pages
     git checkout $(MAIN)
 
 update-slides:
