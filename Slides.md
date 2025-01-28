@@ -1,349 +1,95 @@
 ---
-theme: serif
-bg: https://github.com/PabRod/autodiff-slides/blob/main/_meta/_img/escience.png?raw=true
+theme: moon
+bg: white
 ---
 
-<!-- slide bg="https://github.com/PabRod/autodiff-slides/blob/main/_meta/_img/escience-cover.png?raw=true" -->
-# Automatic differentiation
-## A peek under the hood
+## Dr. Pablo Rodríguez Sánchez
 
-By Pablo Rodríguez-Sánchez
+### in a nutshell
 
-note: this will be invisible in the slide
-### Mind map
-```mermaid
-timeline
-    title Talk structure
-    Introduction : Maths tutor
-			     : Physics and maths
-			     : Wish I knew before
-	Numerical    : Link to definition
-                 : Complex step
-    Automatic    : Dual numbers
-				 : Implementation
-    Outro        : You don't really need any of this
-				 : Backward differentiation is more useful
-				 : But this is plain beautiful
-```
+![[venn.svg|300]]
+Want to know more? Browse to the right ➡️
 
 ---
-## Before we start
 
-[pabrod.github.io](pabrod.github.io)
+## My professional journey
 
----
-## Remember derivatives?
-
-![](https://miro.medium.com/v2/resize:fit:640/format:webp/1*Q9Yu0QQ0968X_ZoUOvxF3g.gif)
-
---
-
-A derivative takes a function $f$ and a position $x_0$ as an argument, and returns a number representing the slope of that function at that point.
-
-+ $(f, x_0) \rightarrow f'(x_0)$
-
---
-
-$$
-f'(x_0) \equiv \lim_{\epsilon \to 0} \frac{f(x_0 + \epsilon) - f(x_0)}{\epsilon}
-$$
-
---
-
-## Numerical derivative
-$$
-f'(x_0) \equiv \lim_{\epsilon \to 0} \frac{f(x_0 + \epsilon) - f(x_0)}{\epsilon}
-$$
-
-$$
-f'(x_0) \approx \frac{f(x_0 + \epsilon) - f(x_0)}{\epsilon}
-$$
---
-## Fun fact
-
-$$
-f'(x_0) \equiv \lim_{\epsilon \to 0} \frac{1}{\epsilon }\Im f(x_0 + i \epsilon)
-$$
---
-## Fun fact
-$$
-f'(x_0) \approx \frac{1}{\epsilon }\Im f(x_0 + i \epsilon) + O(\epsilon^2)
-$$
+![](https://camo.githubusercontent.com/bce70c9cbf73286cbd8fc83889b406c8e8dc512588a35d3a0791fa779560c454/68747470733a2f2f706162726f642e6769746875622e696f2f696d616765732f76697375616c5f63762e706e67)
 
 ---
-### Wait, I don't remember any of this
-![](https://pabrod.github.io/images/portfolio/blackboard.jpeg)
+<!-- slide bg="#23c22f" -->
+<!-- slide bg="https://pabrod.github.io/images/portfolio/blackboard.jpeg" data-background-opacity="0.2"-->
+## Researcher
+**Solid academic background** , built on top of an _MSc_ in theoretical **physics** and a _PhD_ in applied **mathematics**.
 
-### Print local file
-![](_misc/_img/example.png)
+Proven record in **multidisciplinary research**, with publications in topics varying from linguistics to quantum computing.
 
---
-$$
-f'(x_0) \equiv \lim_{\epsilon \to 0} \frac{f(x_0 + \epsilon) - f(x_0)}{\epsilon}
-$$
---
-+ $\frac{d}{dx} x^{3} = 3 x^2$
-+ $\frac{d}{dx} \sin x = \cos x$
-+ $\frac{d}{dx} (x^{3} + \sin x) = \frac{d}{dx} x^{3} + \frac{d}{dx} \sin x$
---
-![](https://i.pinimg.com/736x/ae/f7/de/aef7de3943fdc4e20909e593f3564b83.jpg)
+More details? Browse down ⬇️
 
 --
-- Linearity
-	+ $(f(x) + g(x))' = f'(x) + g'(x)$
-	+ $(f(x) - g(x))' = f'(x) - g'(x)$
-	+ $(c \cdot f(x))' = c \cdot f'(x)$
---
-- Product rule
-	+ ($f(x)\cdot g(x))' = f'g + g'f$ 
-+ Quotient rule
-	+ ($\frac{f(x)}{g(x)})' = \frac{f'g - g'f}{g^2}$ 
---
-- Chain rule
-	+ $(f(g(x)))' = f'(g) \cdot g'(x)$
-	+ $\frac{df}{dx} = \frac{df}{dg} \frac{dg}{dx}$
-	+ $\frac{df}{dx} = \frac{df}{da} \frac{da}{db} \frac{db}{dc} \dots \frac{dy}{dz} \frac{dz}{dx}$
----
-## Can we teach derivatives to a computer
-+ Just as we'll do with a human student?
-
---
-## Dual numbers
-
-$$
-z = (f, f')
-$$
-
-Where:
-+ $f$  represents a function
-+ $f'$ represents its derivative
-+ Both of them evaluated at a given point
-
---
-# Addition
-$$
-(f, f') + (g, g') = (f + g, f' + g')
-$$
---
-# Subtraction
-$$
-(f, f') - (g, g') = (f - g, f' - g')
-$$
---
-# Multiplication
-$$
-(f, f') \cdot (g, g') = (fg, f'g + fg')
-$$
---
-#  Division
-$$
-\frac{(f, f')}{(g, g')} = (\frac{f}{g}, \frac{f'g - fg'}{g^2})
-$$
---
-# Powers
-$$
-(f, f')^{n} = (f^n, nf^{n-1} \cdot f')
-$$
-
---
-# Nice trick
-## But how is this useful?
-
---
-# Consider this
-$$
-f((x, 1)) = (f(x), f'(x))
-$$
-
-Is true for ==**any**== algebraic function!
-
---
-# What about non-algebraic?
-$$
-\sin((u, u')) = (\sin u, \cos u \cdot u')
-$$
+<!-- slide bg="#23c22f" -->
+<!-- slide bg="https://pabrod.github.io/images/portfolio/blackboard.jpeg" data-background-opacity="0.2"-->
+### Highlights
+- Recipient of a _Marie Curie_ predoctoral scholarship
+- My PhD thesis: [A mathematician among biologists](https://doi.org/10.18174/520571)
+- Some publications:
+	- On [quantum radioastronomy](https://doi.org/10.1016/j.ascom.2024.100803)
+	- On [environmental sciences](https://doi.org/10.1016/j.scitotenv.2023.162173)
+	- On applied [differential geometry](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007788)
+	- On biological [simulation](https://royalsocietypublishing.org/doi/10.1098/rsos.191532)
+	- On [automatic differentiation](https://pabrod.github.io/autodiff-slides/)
 
 ---
-# How to implement
-```julia
-""" Structure representing a Dual number """
-struct Dual
-    x::Real
-    dx::Real
-end
-```
+<!-- slide bg="#33b8ff" -->
+<!-- slide bg="[[gafasIOT.jpg]]" data-background-opacity="0.2"-->
+## Engineer
+**Industrial experience** as a _R&D engineer_ for the **optics sector**.
+
+In charge of the **optimization** of optical surfaces' shapes and ray tracing.
+
+Contributed to the design of clinical trials, **patent** writing, interface development and **customer service**.
+
+More details? Browse down ⬇️
 
 --
-# Addition
-$$
-(f, f') + (g, g') = (f + g, f' + g')
-$$
-```julia
-function +(self::Dual, other::Dual)::Dual
-    return Dual(self.x + other.x, self.dx + other.dx)
-end
-```
+<!-- slide bg="#33b8ff" -->
+<!-- slide bg="[[gafasIOT.jpg]]" data-background-opacity="0.2"-->
+### Highlights
+- Proficient in **collaborative**, high-quality coding
+- Experience **leading** projects
 
---
-# Multiplication
-$$
-(f, f') \cdot (g, g') = (fg, f'g + fg')
-$$
+- Experience in multiple programming languages, tools and practices. Among others:
+	- Python, R, Julia, MATLAB, C#
+	- CI/CD, unit testing, version control, literate programming
 
-```julia
-function *(self::Dual, other::Dual)::Dual
-    y = self.x * other.x
-    dy = self.dx * other.x + self.x * other.dx
-    return Dual(y, dy)
-end
-```
-
---
-# Division
-
-$$
-\frac{(f, f')}{(g, g')} = (\frac{f}{g}, \frac{f'g - fg'}{g^2})
-$$
-```julia
-function /(self::Dual, other::Dual)::Dual
-    y = self.x / other.x
-    dy = (self.dx * other.x - self.x * other.dx) / (other.x)^(2)
-    return Dual(y, dy)
-end
-```
-
---
-## Teach also the basics
-$+(f, f') = (f, f')$
-```julia
-+(z::Dual) = z
-```
-
-$-(f, f') = (-f, -f')$
-```julia
--(z::Dual) = Dual(-z.x, -z.dx)
-```
-
---
-## Teach also the basics
-
-$(f, f') > (g, g') \iff f > g$
-```julia
->(self::Dual, other::Dual) = self.x > other.x
-```
---
-## Teach also the basics
-$(f, f') \equiv (g, g') \iff f \equiv g, f' \equiv g'$
-```julia
-==(self::Dual, other::Dual) = (self.x == other.x) && (self.dx == other.dx)
-```
-
---
-
-## Example
-
-```julia
-poly = x -> x^(3) + x^(2) + x  
-z = Dual(3, 1)  
-poly(z)  
-  
-> Dual(39, 34)
-```
-
---
-
-## Example
-
-```julia
-""" Equivalent to previous example. Just uglier """  
-function poly(x)  
-	aux = 0 # Initialize auxiliary variable  
-	for n in 1:3  
-		aux = aux + x^n  
-	end  
-end  
-  
-poly(z)  
-  
-> Dual(39, 34)
-```
-
---
-
-## Table of derivatives
-
-```julia
-'''Enables one-liners like:
-
-operator(z::Dual) = _factory(<fun>, <derivative>)(z)
-
-'''
-function _factory(f::Function, df::Function)::Function
-    return z -> Dual(f(z.x), df(z.x) * z.dx)
-end
-```
-
---
-## Table of derivatives
-$\frac{d}{dx} \sin x = \cos x$
-```julia
-sin(x::Dual) = _factory(sin, cos)(x)
-```
---
-## Table of derivatives
-$\frac{d}{dx} \cos x = -\sin x$
-```julia
-sin(x::Dual) = _factory(sin, cos)(x)
-cos(x::Dual) = _factory(cos, x -> -sin(x))(x)
-```
---
-## Table of derivatives
-$\frac{d}{dx} \tan x = ?$
-```julia
-sin(x::Dual) = _factory(sin, cos)(x)
-cos(x::Dual) = _factory(cos, x -> -sin(x))(x)
-tan(x::Dual) = sin(x) / cos(x)
-```
-
---
-## Table of derivatives
-```julia
-csc(x::Dual) = 1 / sin(x)
-sec(x::Dual) = 1 / cos(x)
-cot(x::Dual) = 1 / tan(x)
-```
-
-Found typo: the code above requires coercing `Real` into `Dual` at quotient definition. 
-See code [here](https://github.com/PabRod/DualDiff.jl/blob/main/src/Dual.jl#L59). 
-I hid this in the slides for the sake of simplicity. 
-
-Kudos for [Suvayu Ali](https://www.esciencecenter.nl/team/suvayu-ali/) for noticing.
-
---
-## Example
-
-```julia
-fun = x -> x + tan(cos(x)^(2) + sin(x)^(2))  
-  
-z = Dual(0, 1)  
-fun(z)  
-  
-> Dual(1.557407724654902, 1.0)
-```
 ---
 
-# Is this necessary?
+
+<!-- slide bg="#922b21" -->
+<!-- slide bg="[[euskalduna.jpeg]]" data-background-opacity="0.2"-->
+## Communicator
+
+Side job in **science communication**. Experience in **public speaking** in theaters and radio. Author of >100 short pieces, some of them featured in international **newspapers**.
+
+Solid record in **teaching** both technical topics and more humanistic ones (such as **effective communication**).
+
+More details? Browse down ⬇️
 
 --
-## Materials available at
+<!-- slide bg="#922b21" -->
+<!-- slide bg="[[euskalduna.jpeg]]" data-background-opacity="0.2"-->
+### Highlights
+-  Working proficiency in 4 languages: 🇪🇸 🇬🇧 🇳🇱 🇵🇹
+- Some pieces for international newspapers, such as _El País_
+- Author of [this R packaging course](https://carpentries-incubator.github.io/lesson-R-packaging/)
+- Author of the [Spanish translation](https://www.canonvannederland.nl/es/over) of _De Canon van Nederland_
+- Institutional blog editor
 
-[pabrod.github.io](pabrod.github.io)
+---
+## Contact details
 
-+ Including:
-	+ Link to these slides
-	+ Code examples in Python and Julia
-	+ Links to packages that do this for you
-	+ Links to better materials than mine
+[pabrod.github.io](https://pabrod.github.io)
 
---
-# Thanks for your attention
+[pabrod@proton.me](mailto:pabrod@proton.me)
+
+(+31) 629 177 277 
